@@ -5,18 +5,17 @@ package com.ex.week1;
  입력받은 숫자를 거꾸로 배열에 담아 출력함
  */
 
-public class Solution {
+public class ReversePrint {
 
     public static void main( String[] args ) {
-        Solution s = new Solution();
-        int[] answer = s.solution(1234567);
+        int[] answer = solution(1234567);
 
         for(int i =0 ; i < answer.length ; i++){
             System.out.print(answer[i]);
         }
     }
 
-    public int[] solution(long n) {
+    public static int[] solution(long n) {
         String n_string = Long.valueOf(n).toString();
         int[] answer = new int[n_string.length()];
         for(int i = 0 ; i < n_string.length() ; i ++) {

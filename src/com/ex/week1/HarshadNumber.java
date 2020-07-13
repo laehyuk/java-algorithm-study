@@ -23,24 +23,23 @@ package com.ex.week1;
         입출력 예 #4
         13의 모든 자릿수의 합은 4입니다. 13은 4로 나누어 떨어지지 않으므로 13은 하샤드 수가 아닙니다.
 */
-class Solution3 {
+class HarshadNumber {
     public static void main( String[] args ) {
-        Solution3 s = new Solution3();
         try {
-            System.out.println(s.solution(10));
-            System.out.println(s.solution(12));
-            System.out.println(s.solution(11));
-            System.out.println(s.solution(13));
-            System.out.println(s.solution(0));
+            System.out.println(solution(10));
+            System.out.println(solution(12));
+            System.out.println(solution(11));
+            System.out.println(solution(13));
+            System.out.println(solution(0));    // range error
         }catch (Exception e){
             e.printStackTrace();
         }
     }
-    public boolean solution(int x) throws Exception {
+    public static boolean solution(int x) throws Exception {
         if(!chkArgRange(x)) throw new Exception("range error");
 
         String x_str = String.valueOf(x);
-        boolean answer;
+        boolean answer = false;
         int r = 0;
 
         for(int i =0 ; i <x_str.length(); i++){
@@ -48,16 +47,13 @@ class Solution3 {
         }
         if(x%r == 0){
             answer = true;
-        }else {
-            answer = false;
         }
         return answer;
     }
 
-    public boolean chkArgRange(int x) {
-        if( !(x>=1 && x<=10000) ){
-            return false;
-        }
-        return true;
+    public static boolean chkArgRange(int x) {
+        boolean range = x>=1 && x<=10000;
+
+        return range;
     }
 }
